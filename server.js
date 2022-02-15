@@ -29,7 +29,7 @@ app.get('/', function(req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-app.post('/api/shorturl/new', async (req, res) => {
+app.post('/api/shorturl', async (req, res) => {
   await shortenURL(req, res)
 })
 

@@ -5,14 +5,11 @@ const URL = require('../db/schemas')
 
 async function shortenURL(req, res) {
     const { url } = req.body
-
-    console.log(url)
-
     const urlCode = shortId.generate()
 
     if (!validUrl.isWebUri(url)) {
         res.status(401).json({
-        error: 'invalid URL'
+        error: 'invalid url'
         })
     } else {
         try {
